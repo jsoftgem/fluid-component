@@ -1,0 +1,21 @@
+{
+  "name": "fluid-component",
+  "version": "0.1.0",
+  "description": "Helper class for creation fluid-component",
+  "main": "src/fluid-component.js",
+  "scripts": {
+    "preinstall": "./node_modules/.bin/mocha --recursive",
+    "test": "./node_modules/.bin/mocha test --watch --recursive"
+  },
+  "dependencies": {
+    "lodash": "^4.11.1",
+    "q": "^1.4.1",
+    "storage": "^0.2.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  },
+  "author": "Jerico de Guzman",
+  "license": "MIT"
+}
