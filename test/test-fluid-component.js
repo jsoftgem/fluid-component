@@ -4,12 +4,12 @@
     var expect = chai.expect;
 
     var IdeComponent = require('../src/fluid-component.js');
+    var fluidComponent = new IdeComponent();
     var sampleComponent;
-
     describe('ide component specifications', function () {
 
         beforeEach(function () {
-            sampleComponent = IdeComponent.component('sample', {
+            sampleComponent = fluidComponent.component('sample', {
                 handler: function (source, local, scope, context) {
                 }
             });
@@ -31,9 +31,13 @@
         it('should create scope', function () {
             expect(sampleComponent.scope).to.be.defined;
         });
-
+        
         it('should create setComponentManager', function () {
             expect(sampleComponent.setComponentManager).to.be.defined;
+        });
+
+        it('should passed instance of FluidComponent', function () {
+            expect(sampleComponent instanceof IdeComponent).to.be.defined;
         });
 
     });

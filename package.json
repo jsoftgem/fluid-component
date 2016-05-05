@@ -1,10 +1,9 @@
 {
   "name": "fluid-component",
-  "version": "0.1.2",
+  "version": "0.1.7",
   "description": "Helper class for creation fluid-component",
   "main": "src/fluid-component.js",
   "scripts": {
-    "preinstall": "./node_modules/.bin/mocha --recursive",
     "test": "./node_modules/.bin/mocha test --watch --recursive"
   },
   "dependencies": {
@@ -17,5 +16,9 @@
     "mocha": "^2.4.5"
   },
   "author": "Jerico de Guzman",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jsoftgem/fluid-component"
+  }
 }
