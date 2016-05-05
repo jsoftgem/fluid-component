@@ -23,7 +23,10 @@
                                 }
                                 if (targetComponent) {
                                     setTimeout(function () {
-                                        handler(name, options.local, targetComponent.scope, context);
+                                        var returnValue = handler(name, options.local, targetComponent.scope, context);
+                                        if (context && context.done) {
+                                            context.done(returnValue);
+                                        }
                                     });
                                 }
                             } else {
