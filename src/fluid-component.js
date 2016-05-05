@@ -7,8 +7,8 @@
         return {
             component: function (name, options) {
                 return {
-                    requires: options.require,
-                    runs: options.modules,
+                    requires: options.requires,
+                    runs: options.runs,
                     setComponentManager: function (componentManager) {
                         this.componentManager = componentManager;
                         lodash.set(componentManager.handlers, name, options.handler);
