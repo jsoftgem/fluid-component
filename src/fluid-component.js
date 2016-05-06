@@ -11,24 +11,12 @@
                     runs: options.runs,
                     setComponentManager: function (componentManager) {
                         this.componentManager = componentManager;
-                        lodash.set(componentManager.handlers, name, options.handler);
+                        this.componentManager.setHandler(name, options.handler);
                     },
                     execute: function (error, context) {
                         try {
                             if (this.componentManager) {
-                                var targetComponent = this.componentManager.get(options.target);
-                                var handler = this.componentManager.getHandler(options.target);
-                                if (!handler) {
-                                    throw 'Execution failed. Missing handler function for component ' + options.target + '.';
-                                }
-                                if (targetComponent) {
-                                    setTimeout(function () {
-                                        var returnValue = handler(name, options.local, targetComponent.scope, context);
-                                        if (context && context.done) {
-                                            context.done(returnValue);
-                                        }
-                                    });
-                                }
+                                this.componentManager.execute(error, name, context, options);
                             } else {
                                 throw 'Missing component manager.';
                             }
