@@ -7,11 +7,11 @@
         return {
             component: function (name, options) {
                 return {
+                    __$: options.handler,
                     requires: options.requires,
                     runs: options.runs,
                     setComponentManager: function (componentManager) {
                         this.componentManager = componentManager;
-                        this.componentManager.setHandler(name, options.handler);
                     },
                     execute: function (error, context) {
                         try {

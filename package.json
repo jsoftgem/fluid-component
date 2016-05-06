@@ -1,6 +1,6 @@
 {
   "name": "fluid-component",
-  "version": "0.1.11",
+  "version": "0.1.14",
   "description": "Helper class for creation fluid-component",
   "main": "src/fluid-component.js",
   "scripts": {
