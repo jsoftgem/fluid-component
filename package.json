@@ -1,6 +1,6 @@
 {
   "name": "fluid-component",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "description": "Helper class for creation fluid-component",
   "main": "src/fluid-component.js",
   "scripts": {
@@ -15,6 +15,11 @@
     "chai": "^3.5.0",
     "mocha": "^2.4.5"
   },
+  "keywords": [
+    "fluid",
+    "component",
+    "fluid-component"
+  ]
   "author": "Jerico de Guzman",
   "license": "MIT",
   "repository": {
