@@ -26,7 +26,7 @@
 
         it('should create execute function', function () {
             expect(sampleComponent.execute).to.be.defined;
-        });
+        }); 
 
         it('should create scope', function () {
             expect(sampleComponent.scope).to.be.defined;
@@ -39,7 +39,8 @@
         it('should passed instance of FluidComponent', function () {
             expect(sampleComponent instanceof IdeComponent).to.be.truthy;
         });
-        it('should get handler with __$t', function () {
+
+        it('should get handler with __$', function () {
             expect(sampleComponent.__$).to.be.defined;
             expect(sampleComponent instanceof Function).to.be.defined;
             var handler = sampleComponent.__$;
