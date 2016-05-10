@@ -1,6 +1,8 @@
 # fluid-component
  
   A helper class for creating pluggable components.
+ 
+ [![NPM](https://nodei.co/npm/fluid-component.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/fluid-component.png?downloads=true&downloadRank=true&stars=true)
   
 ## Installation
 `npm install fluid-component --save`
