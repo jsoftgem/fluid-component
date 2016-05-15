@@ -3,8 +3,10 @@
 
     function FluidComponent() {
         var scope = {};
+        var _componentManager;
         var _this = this;
         _this.component = component;
+        _this.getManager = getManager;
         return _this;
         function component(name, options) {
             return {
@@ -12,12 +14,12 @@
                 requires: options.requires,
                 runs: options.runs,
                 setComponentManager: function (componentManager) {
-                    this.componentManager = componentManager;
+                    _componentManager = componentManager;
                 },
                 execute: function (error, context) {
                     try {
-                        if (this.componentManager) {
-                            this.componentManager.execute(error, name, context, options);
+                        if (_componentManager) {
+                            _componentManager.execute(error, name, context, options);
                         } else {
                             throw 'Missing component manager.';
                         }
@@ -31,6 +33,10 @@
                 name: name,
                 target: options.target
             };
+        }
+
+        function getManager() {
+            return _componentManager;
         }
     }
 
