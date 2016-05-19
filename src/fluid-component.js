@@ -20,7 +20,7 @@
                 execute: function (callback, context) {
                     try {
                         if (_componentManager) {
-                            _componentManager.execute(error, name, scope, context, options, callback);
+                            _componentManager.execute(name, scope, context, options, callback);
                         } else {
                             throw 'Missing component manager.';
                         }
