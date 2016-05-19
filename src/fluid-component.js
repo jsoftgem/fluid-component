@@ -7,6 +7,7 @@
         var _this = this;
         _this.component = component;
         _this.getManager = getManager;
+        _this.getScope = getScope;
         return _this;
         function component(name, options) {
             return {
@@ -16,20 +17,19 @@
                 setComponentManager: function (componentManager) {
                     _componentManager = componentManager;
                 },
-                execute: function (error, context) {
+                execute: function (callback, context) {
                     try {
                         if (_componentManager) {
-                            _componentManager.execute(error, name, context, options);
+                            _componentManager.execute(error, name, scope, context, options, callback);
                         } else {
                             throw 'Missing component manager.';
                         }
                     } catch (err) {
-                        if (error) {
-                            error(err);
+                        if (callback) {
+                            callback(err);
                         }
                     }
                 },
-                scope: scope,
                 name: name,
                 target: options.target
             };
@@ -38,9 +38,12 @@
         function getManager() {
             return _componentManager;
         }
+
+        function getScope() {
+            return scope;
+        }
     }
 
     module.exports = FluidComponent;
-
-
+    
 })();
