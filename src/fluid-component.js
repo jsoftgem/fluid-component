@@ -8,6 +8,7 @@
         _this.component = component;
         _this.getManager = getManager;
         _this.getScope = getScope;
+        _this.execute = execute;
         return _this;
         function component(name, options) {
             return {
@@ -34,12 +35,15 @@
                 target: options.target
             };
         }
+
         function getManager() {
             return _componentManager;
         }
+
         function getScope() {
             return scope;
         }
+
         function execute(options, manager, callback) {
             try {
                 if (!options.target) {
