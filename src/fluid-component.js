@@ -34,16 +34,38 @@
                 target: options.target
             };
         }
-
         function getManager() {
             return _componentManager;
         }
-
         function getScope() {
             return scope;
+        }
+        function execute(options, manager, callback) {
+            try {
+                if (!options.target) {
+                    throw 'Property target is required.';
+                }
+                if (!options.name) {
+                    throw 'Property name is required.';
+                }
+                if (!manager) {
+                    throw 'Missing component manager.';
+                }
+                var tempComp = component(options.name, {
+                    target: options.target,
+                    local: options.local
+                });
+                tempComp.setComponentManager(manager);
+                tempComp.execute(callback, options.context);
+            } catch (err) {
+                if (callback) {
+                    callback(err);
+                }
+            }
+
         }
     }
 
     module.exports = FluidComponent;
-    
+
 })();
